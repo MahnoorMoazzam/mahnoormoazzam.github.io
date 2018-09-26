@@ -1,142 +1,403 @@
-
 <!DOCTYPE html>
-  <html>
+	<html>
 
-    <head>
-      <title>Testing</title>
-        <style>
-          
-			#myDIV 
-			{
-		
-				font-size:45px
-				width: 100%;
-				padding: 50px 0;
-				margin-top: 10px;
-			}
-			th 
-			{
-				margin-left:100px;
-				text-align: left;
-			}
-			.wrap 
-			{
-				width: 100%;
-			}
-
-			.floatleft 
-			{
-				float:left; 
-				width: 20%;
-				background-color:navy;
-				position:fixed;
-				height: 800px;
+		<head>
+			<title>MY PORTFOLIO</title>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta charset="utf-8">
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<link rel='stylesheet' href='form-style.css' type='text/css' />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style>
+				.container 
+					{
+						display :flex;
+						
+					}
+				.container2 
+					{
+						display :flex;	
+					}
+				<!--------------------BUTTONS ---------------------->
+				.top-buttons 
+					{
+						background-color:Transaparent;
+						border-color:transparent;
+						color:RED;
+						font-size:20px;
+						margin-top:300;
+					}
+				.btn-change:hover
+					{
+						color: orange;
+					}	
+				.btn-change:active 
+					{
+						color:purple;
+					}
 				
-				 
-			}
 
-			.floatright 
-			{
-				float: right;
-				background-color: honeydew;
-				height: 5000px;
-				width: 80%;
-			}
-        </style>
-    </head>
+				<!---------------------HOME3 myWORK IMAGE HOVER  -->				
+				.rowproject
+					{
+						display:flex;
+						flex:wrap;
+					}
+				.picproject{
+						width:400px;
+						height:217px;
+						background: url(http://www.corelangs.com/css/box/img/tiger.png) no-repeat;
+						}
+				.textproject{
+						width:340px;
+						height:217px;
+						background:#FFF;
+						opacity:0;
+						}
+				.picproject:hover .textproject
+				{
+					opacity:0.6;
+					text-align:justify;
+					color:#000000;
+					font-size:20px;
+					font-weight:700;
+					font-family:"Times New Roman", Times, serif;
+					padding:30px;
+				}
+				<!-------------------------EDUACTION-->				
+				#panel, #flip 
+					{
+						padding: 5px;
+						text-align: center;
+						background-color: #e5eecc;
+						border: solid 1px #c3c3c3;
+						margin-left:350px;
+						margin-right:300px;
+	
+					}
 
-    <body>
-		<div  class="wrap">
-			<div class="floatleft">
-				<br><br><br><br><br><br><br><br><br><br><br>
-				<button style="background-color:navy;color:white;margin-left:100px;display:inline-block;font-size:20px;border-color:navy" onclick="document.getElementById('myDIV1').scrollIntoView();">About</button><br><br><br>
-				<button style="background-color:navy;color:white;margin-left:85px;display:inline-block;font-size:20px;border-color:navy" onclick="document.getElementById('myDIV2').scrollIntoView();">Objective</button><br><br><br>
-				<button style="background-color:navy;color:white;margin-left:85px;display:inline-block;font-size:20px;border-color:navy" onclick="document.getElementById('myDIV3').scrollIntoView();">Education</button><br><br><br>
-				<button style="background-color:navy;color:white;margin-left:100px;display:inline-block;font-size:20px;border-color:navy" onclick="document.getElementById('myDIV4').scrollIntoView();">Skills</button><br><br><br>
-				<button style="background-color:navy;color:white;margin-left:95px;display:inline-block;font-size:20px;border-color:navy" onclick="document.getElementById('myDIV5').scrollIntoView();">Projects</button><br><br><br>
-				<button style="background-color:navy;color:white;margin-left:95px;display:inline-block;font-size:20px;border-color:navy" onclick="document.getElementById('myDIV6').scrollIntoView();">Interests</button><br><br><br>
-				<br><br><br><br><br><br><br>
+				#panel 
+					{
+						padding: 50px;
+						display: none;
+						background-color: pink;
+						border: solid 1px #c3c3c3;
+						margin-left:350px;
+						margin-right:300px;
+
+					}
+				#panel1, #flip1 
+					{
+						padding: 5px;
+						text-align: center;
+						background-color: #e5eecc;
+						border: solid 1px #c3c3c3;
+						margin-left:350px;
+						margin-right:300px;
+	
+					}
+				#panel1 
+					{
+						padding: 50px;
+						display: none;
+						background-color: pink;
+						border: solid 1px #c3c3c3;
+						margin-left:350px;
+						margin-right:300px;
+					}
+
+				<!----------------------------------Contact -->
+				.dropbtn 
+					{
+						background-color: #4CAF50;
+						color: white;
+						padding: 16px;
+						font-size: 16px;
+						border: none;
+					}
+
+				.dropdown 
+					{
+						position: relative;
+						display: inline-block;
+					}
+
+				.dropdown-content 
+					{
+						display: none;
+						position: absolute;
+						background-color: #f1f1f1;
+						min-width: 160px;
+						box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+						z-index: 1;
+					}
+				.dropdown-content a 
+					{
+						color: black;
+						padding: 12px 16px;
+						text-decoration: none;
+						display: block;
+					}
+
+				.dropdown-content a:hover {background-color: blue;}
+
+				.dropdown:hover .dropdown-content {display: block;}
+
+				.dropdown:hover .dropbtn {background-color: pink;}
+
+								
+			</style>
+		</head>
+
+		<body onload="startTime()">
+			<div id="txt"></div>
+			<div class="container">
+				<img  src="https://www.khatritoursandtravels.com/images/portfolio.png" width="1600" height="250" style="flex-shrink:2 ;" alt="Snow"/><br>
 			</div>
-      
-           <div class="floatright">
-				<div id="myDIV1">
-				<br><br><br><br><br><br><br>
-				<h2 style="margin-left:100px;font-size:30px;">ABOUT</h2><br>
-				<h2 style="margin-left:120px;font-size:20px;">Mahnoor</h2>
-				<h2 style="margin-left:120px;font-size:20px;">Home Address</h2>
-				<h2 style="margin-left:120px;font-size:20px;color:slategray">XYZ town,Lahore,pakistan</h2>
-				<h2 style="margin-left:120px;font-size:20px;">Contact No. </h2>
-				<h2 style="margin-left:120px;font-size:20px;color:slategray">0332-xyzxyzxx</h2>
-				<h2 style="margin-left:120px;font-size:20px;">E-mail:</h2>
-				<h2 style="margin-left:120px;font-size:20px;color:slategray">L164302@lhr.nu.edu.pk</h2><br>
-				<br><br><br><br><br><br><br>
-		 	
+			<div class="container1" style="color:red;background-color:lightpink">
+				<a class="top-buttons btn-change" style="margin-left:280px " href"#" onclick="myFunction1()">ABOUT</a>
+				<a class="top-buttons btn-change" style="margin-left:80px" href"#" onclick="myFunction2()">OBJECTIVE</a>
+				<a class="top-buttons btn-change" style="margin-left:80px" href"#" onclick="myFunction3()">EDUCATION</a>
+				<a class="top-buttons btn-change" style="margin-left:80px" href"#" onclick="myFunction4()">SKILLS</a>
+				<a class="top-buttons btn-change" style="margin-left:80px" href"#" onclick="myFunction5()">PROJECTS</a>
+				<a class="top-buttons btn-change" style="margin-left:80px;" href"#" onclick="myFunction6()">CONTACTME</a><br>
+			</div>
+			<!-----------------------------------------------------------------MY INTRO---------------------------------------------------------------------------------->
+			<div id="home1">
+				<div class="container2" >
+					<img  id="zoompic" src="https://i.imgur.com/MCipiZo.png"  width="410" height="360" style="flex-shrink:2 ;margin-top:70px;margin-left:340px "  alt="Snow"/>
+					<h2 style="flex-shrink:2 ;font-size:20px;margin-top:100px;margin-left:100px">Mahnoor</h2>
+					<h2 style="flex-shrink:2 ;font-size:20px;margin-top:150px;margin-left:-80px">Home Address</h2>
+					<h3 style="flex-shrink:2 ;font-size:20px;margin-top:190px;margin-left:-125px;color:lightslategray">ABC ,Lahore,Pakistan</h3>
+					<h2 style="flex-shrink:2 ;font-size:20px;margin-top:250px;margin-left:-195px">Contact No.</h2>
+					<h3 style="flex-shrink:2 ;font-size:20px;margin-top:290px;margin-left:-100px;color:lightslategray">0322-xyzxyz</h3>
+					<h2 style="flex-shrink:2 ;font-size:20px;margin-top:350px;margin-left:-105px">E-mail</h2>
+					<h3 style="flex-shrink:2 ;font-size:20px;margin-top:390px;margin-left:-60px;color:lightslategray">L164302@lhr.nu.edu.pk</h3>
 				</div>
-				<div id="myDIV2">
-				<br><br><br><br><br><br><br>
-				<h2 style="margin-left:100px;font-size:30px;">OBJECTIVE</h2>
-				<h2 style="margin-left:120px;font-size:20px;color:slategray">To pursue a challenging position in an esteemed organization 
-				where I can apply knowledge, drive initiative and professional analytical 
-				pragmatic approach with due regards to ethical value. 
-				I believe in working to the best of abilities with integrity and sincerity.</h2>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		 	
+			</div>
+			<!-------------------------------------------------------------------MY OBJECTIVE-------------------------------------------------------------------------------------------->
+			<div class="container1" id="home2">
+				<br><br>
+				<h2 style="text-align:center;font-size:30px;margin-top:100px;color :red;font:bold">Objective</h2>
+				<h2 style="text-align:center;margin-left:300px;margin-right:300px;font-size:20px;margin-top:50px">To pursue a challenging position in an esteemed organization 
+					where I can apply knowledge, drive initiative and professional analytical 
+					pragmatic approach with due regards to ethical value. 
+					I believe in working to the best of abilities with integrity and sincerity.</h2>
+			</div>
+			<br><br><br><br>
+			<!-------------------------------------------------------------------EDUCATION--------------------------------->
+			<div  id="home3">
+				<h2 style="text-align:center;font-size:30px;margin-top:10px;color :red;font:bold">EDUCATION</h2>
+			<br>
+				<div id="flip">
+					Intermediate
 				</div>
 				
-				<div id="myDIV3">
-				<br><br><br><br><br><br><br>
-					<h2 style="margin-left:100px;font-size:30px;">EDUCATION</h2>
-					 
-					<h1 style="margin-left:120px;font-size: 25px;color:black">Bachelar of Computer Science</h1>
-					<h1 style="margin-left:120px;font-size: 20px;color:slategray">FAST</h1>
-					<h1 style="margin-left:120px;font-size: 20px;color:slategray">CGPA:3.39</h1>
-					<h1 style="margin-left:120px;font-size: 20px;color:slategray">2016-present</h1>
-
-					<br><br><br>
-					<h1 style="margin-left:120px;font-size: 25px;color:black">Intermediate</h1>
-					<h1 style="margin-left:120px;font-size: 20px;color:slategray">PGC</h1>
-					<h1 style="margin-left:120px;font-size: 20px;color:slategray">Marks:89%</h1>
-					<h1 style="margin-left:120px;font-size: 20px;color:slategray">2014-2016</h1><br><br><br><br><br>						
-					</div>
+				<div id="panel">
+					<br>
+					<h1 style="text-align:center;font-size: 20px;color:gray">PGC</h1>
+					<h1 style="text-align:center;font-size: 20px;color:gray">Marks:89%</h1>
+					<h1 style="text-align:center;font-size: 20px;color:gray">2014-2016</h1><br><br>
+				</div>
+				<div id="flip1">
+				Bachelar of Computer Science
+				</div>
 				
-				<div id="myDIV4">
-						<br><br><br><br><br><br><br>
-					<h2 style="margin-left:100px;font-size:30px;">SKILLS</h2>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">SQL,JAVA,C++,Assembly language,,HTML,CSS,ASP</li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Windows and Lunix</li><br>
-				    <li style="margin-left:120px;font-size: 25px;color:slategray">Database design and implementation</li><br>
-				    <li style="margin-left:120px;font-size: 25px;color:slategray">MS Office, Visual Studio,NetBeans</li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Excellent time management skills</li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Effective communication skills</li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Team Work</li><br>
-						
+				<div id="panel1">
+					<br>
+					<h1 style="text-align:center;font-size: 20px;color:gray">FAST</h1>
+					<h1 style="text-align:center;font-size: 20px;color:gray">CGPA:3.4</h1>
+					<h1 style="text-align:center;font-size: 20px;color:gray">2016-Present</h1><br><br>
 				</div>
-				<div id="myDIV5">
-				<br><br><br><br><br><br><br><br><br><br><br>
-					<h2 style="margin-left:100px;font-size:30px;">PROJECTS</h2>
-					 
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Paint Brush in C++  </li>	<br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Notepad in C++  </li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Website (online shoppping) using html,CSS,java,SQL  </li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Brick Breaker Game in Assembly language</li><br><br><br><br><br>
-
-						
+		
+			</div>
+			<!-------------------------------------------------------------------SKILLS--------------------------------->
+			<div id="home4">
+				<h2 style="text-align:center;font-size:30px;color :red;font:bold">Skills</h2>
+				<li  style="margin-left:420px;font-size: 25px;color:lightslategray">SQL,JAVA,C++,Assembly language,,HTML,CSS,ASP</li><br>
+				<li  style="margin-left:420px;font-size: 25px;color:lightslategray">Windows and Lunix</li><br>
+			    <li  style="margin-left:420px;font-size: 25px;color:lightslategray">Database design and implementation</li><br>
+			    <li  style="margin-left:420px;font-size: 25px;color:lightslategray">MS Office, Visual Studio,NetBeans</li><br>
+				<li  style="margin-left:420px;font-size: 25px;color:lightslategray">Excellent time management skills</li><br>
+				<li  style="margin-left:420px;font-size: 25px;color:lightslategray">Effective communication skills</li><br>
+				<li  style="margin-left:420px;font-size: 25px;color:lightslategray">Team Work</li><br>
+			</div>
+			
+			<!-- ------------------------------------------MY PROJECTS ------------------------------------------------------------------------->
+			<div id="w33">
+			
+			<h2 style="text-align:center;font-size:30px;margin-top:40px;color :red;font:bold">My Works</h2>
+			<br><br><br>
+			<div class="rowproject" id="w33"  style="display:flex;flex-wrap:wrap;">
+			<br><br>
+				<div class="picproject" style="background: url(https://i.ytimg.com/vi/WJq3mtlxQrk/maxresdefault.jpg) no-repeat;flex-wrap:wrap;margin-left:100px">
+					<div class="textproject">
+						Project 1:
+						<br>  Online Shopping(website) in CSS,HTML,SQL.
+	
+					</div>	
 				</div>
-				<div id="myDIV6">
-				<br><br><br><br><br><br><br><br><br><br><br>
-					<h2 style="margin-left:100px;font-size:30px;">INTERESTS</h2>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Traveling</li><br>
-					<li style="margin-left:120px;font-size: 25px;color:slategray">Gaming</li><br>
-				    <li style="margin-left:120px;font-size: 25px;color:slategray">Reading</li><br>
-				    <br><br><br><br><br><br>
-					 
-				</div>
-
-				
-		   </div>
-	</div>
-      
+			
+				<div class="picproject" style="background: url(https://d2yal1mtmg1ts6.cloudfront.net/8ZwkK1emnHZwAlrfAB_oG_hHRoZ0sKgl_LdGVu6qYs6VstCTtqwcDsfLCN36ZAXvAOLV=h350-r) no-repeat;margin-left:0px">
+					<div class="textproject">
   
-</body>
+						Project 2:
+						<br>  Brick breaker game in Assembly Language.
+	
+					</div>
+				</div>
+			<div class="picproject" style="background: url(https://upload.wikimedia.org/wikipedia/commons/3/37/Notepad%2B%2B_v6.9.2_on_Windows_10%2C_empty_new_file.png) no-repeat;flex-wrap:wrap" >
+				<div class="textproject">
+					Project 3:
+					<br>  Notepad in C++ Language.
+	
+				</div>
+			</div>
+		</div>
+		</div>
+<!-----------------------------------------------------------------------END MY PROJECTS------------------------------------------------------------------------------------------------------->
 
-</html>
+			<div id="home6" style="flex-wrap:wrap;margin-top:-50px;border-color:red;border-width:5px">
+				<div style="flex-wrap:wrap;background-color:pink;border-color:red;margin-top:10px;margin-left:450px;margin-right:450px">
+				<br><br>
+					<p style="margin-left:100px;font-size:20px;color:blue">Name:</p>
+					<input style="margin-left:100px;size:20px;border-color:Red;" type='text' id="yourNAME"name='Fname'><br><br>
+					<p style="margin-left:100px;font-size:20px;color:blue">Select Country:</p>
+					<div class="dropdown">
+						<select class="dropbtn" style="margin-left:100px;font-size:20px;color:red;border-color:Red;border-width:2px" name=select1>
+							<div class="dropdown-content">
+								<option style="font-size:20px;">Pakistan</option>
+								<option style="font-size:20px;">Saudi Arabia</option>
+								<option style="font-size:20px;">New Zealand</option>
+							</div>
+						</select>
+				    </div>
+							
+                    <br>
+					<p id ="cmessage" style="margin-left:100px;font-size:20px;color:blue">Message:</p>
+					<textarea id="mytextarea" cols="40" rows="6" style="margin-left:100px;border-color:red;border-width:2px"></textarea><br>
+					<input style="margin-left:500px;border-color:red;border-width:2px" type="button" onclick="validateField()" value="SUBMIT" />
+					<br><br>	
+					
+				</div>
+			</div>
+
+					<!------------------------------------------------------------	-->
+	<script>
+		function myFunction1() {
+   
+			document.getElementById('home1').style.display = "block";
+			document.getElementById('home2').style.display = "none";
+			document.getElementById('home3').style.display = "none";
+			document.getElementById('home4').style.display = "none";
+			document.getElementById('w33').style.display = "none";
+			document.getElementById('home6').style.display = "none";
+			}
+
+		function myFunction2() {
+   
+			document.getElementById('home1').style.display = "none";
+			document.getElementById('home2').style.display = "block";
+			document.getElementById('home3').style.display = "none";
+			document.getElementById('home4').style.display = "none";
+			document.getElementById('w33').style.display = "none";
+			document.getElementById('home6').style.display = "none";
+			}
+		function myFunction3() {
+			document.getElementById('home1').style.display = "none";
+			document.getElementById('home2').style.display = "none";
+			document.getElementById('home3').style.display = "block";
+			document.getElementById('home4').style.display = "none";
+			document.getElementById('w33').style.display = "none";
+			document.getElementById('home6').style.display = "none";
+			}
+		function myFunction4() {
+			document.getElementById('home1').style.display = "none";
+			document.getElementById('home2').style.display = "none";
+			document.getElementById('home3').style.display = "none";
+			document.getElementById('home4').style.display = "block";
+			document.getElementById('w33').style.display = "none";
+			document.getElementById('home6').style.display = "none";
+			}
+		function myFunction5() {
+			document.getElementById('home1').style.display = "none";
+			document.getElementById('home2').style.display = "none";
+			document.getElementById('home3').style.display = "none";
+			document.getElementById('home4').style.display = "none";
+			document.getElementById('w33').style.display = "block";
+			document.getElementById('home6').style.display = "none";
+			}
+		function myFunction6() {
+			document.getElementById('home1').style.display = "none";
+			document.getElementById('home2').style.display = "none";
+			document.getElementById('home3').style.display = "none";
+			document.getElementById('home4').style.display = "none";
+			document.getElementById('w33').style.display = "none";
+			document.getElementById('home6').style.display = "block";
+			} 
+<!--TIME -->
+		function startTime() {
+			var today = new Date();
+			var h = today.getHours();
+			var m = today.getMinutes();
+			var s = today.getSeconds();
+			m = checkTime(m);
+			s = checkTime(s);
+			document.getElementById('txt').innerHTML =
+			h + ":" + m + ":" + s;
+			var t = setTimeout(startTime, 500);
+			}
+		function checkTime(i) {
+			if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+			return i;
+			}
+<!--Education -->
+		$(document).ready(function(){
+			$("#flip").click(function(){
+			$("#panel").slideToggle("slow");
+			});
+		});
+
+		$(document).ready(function(){
+			$("#flip1").click(function(){
+				$("#panel1").slideToggle("slow");
+			});
+		});
+<!--Contact me -->
+		function Validate() 
+			{
+				var val = document.getElementById('yourNAME').value;
+				if(val.length == 0)
+				{
+					alert('Enter name in textbox  ');
+					return false;
+				}
+				else if (!val.match(/^[a-zA-Z]+$/)) 
+				{
+					alert('Only alphabets are allowed');
+					return false;
+				}	    
+			}
+
+		function removeWhiteSpaces(str) {
+			return str.replace(/\s/g, '');
+			}
+		function validateField() {				
+			Validate();
+			var input = removeWhiteSpaces(document.getElementById('mytextarea').value);
+
+    // We don't accept any blank form
+			if (input == '')
+				alert('Empty text box ');
+			else
+				alert('Done');
+		}
+$('zoompic').zoom(); // add zoom
+	</script>
+
+
+		</body>
+		
+
+	</html>
